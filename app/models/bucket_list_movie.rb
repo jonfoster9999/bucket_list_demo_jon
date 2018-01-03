@@ -1,0 +1,2 @@
+class BucketListMovie < ApplicationRecord
+end
