@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   end
   resources :movies
   resources :bucket_list_movies
+
+  devise_scope :user do
+    delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
 end
