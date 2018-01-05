@@ -1,2 +1,8 @@
 <br>
-<h2>Check out all these movies!</h2>
+<h2>Add some movies to your Bucket List</h2>
+
+<% @movies.each do |movie| %>
+  <p><%=movie.title%> | <%=movie.genre%> | <%=movie.rating%>
+  <%=form_tag(bucket_list_movies_path(movie_id: movie.id), method: "post") do %>
+  <%= submit_tag('Add to Bucket List')%>
+<% end %> </p>
