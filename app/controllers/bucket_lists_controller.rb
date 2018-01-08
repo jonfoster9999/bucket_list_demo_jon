@@ -1,12 +1,12 @@
 class BucketListsController < ApplicationController
 
   def index
-    @bucket_lists = Bucket_list.all
+    @bucket_lists = BucketList.all
   end
 
   def new
     if current_user
-      @bucket_list = Bucket_list.new
+      @bucket_list = BucketList.new
       @bucket_list.movies.build
     else
       flash[:alert] = "Please Log In First"
@@ -15,7 +15,7 @@ class BucketListsController < ApplicationController
   end
 
   def create
-    @bucket_list = Bucket_list.new(bucket_list_params)
+    @bucket_list = BucketList.new(bucket_list_params)
     if params[:bucket_list][:movie_ids] != "" && params[:bucket_list][:movie_ids] != nil
       @bucket_list.movies << Movie.find(params[:bucket_list][:movie_ids])
     end
