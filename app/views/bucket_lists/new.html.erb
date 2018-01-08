@@ -1,6 +1,6 @@
 <h2>New Bucket List Form</h2>
 
-<%= form_for(@bucket_list) do |f|%>
+<%= form_for([current_user, @bucket_list]) do |f|%>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
