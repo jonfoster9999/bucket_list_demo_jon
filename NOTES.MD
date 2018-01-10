@@ -22,3 +22,7 @@
 <% end %> -->
 
 <!-- <%= check_box_tag "[movie_ids][]", m.id %>
+
+  <h3><%= link_to f.name, user_bucket_list_path(f) %></h3>
+
+     redirect_to user_bucket_list_path(current_user, @bucket_list) - show page for indiv bucketlist

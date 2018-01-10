@@ -21,7 +21,7 @@ class BucketListsController < ApplicationController
        @bucket_list.movies << Movie.find(params[:bucket_list][:movie_ids])
      end
      if @bucket_list.save
-       redirect_to user_bucket_lists_path(current_user, @bucket_list)
+       redirect_to user_bucket_lists_path(current_user)
      else
        flash[:alert] = "Please make sure all fields are filled out correctly"
        redirect_to new_user_bucket_list_path
