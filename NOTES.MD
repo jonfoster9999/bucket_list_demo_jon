@@ -20,3 +20,5 @@
   <%= f.label m.name %>
   <%= check_box_tag "movie_ids", m.id %>
 <% end %> -->
+
+<!-- <%= check_box_tag "[movie_ids][]", m.id %>
