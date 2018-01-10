@@ -29,6 +29,6 @@ class BucketListsController < ApplicationController
 private
 
   def bucket_list_params
-    params.require(:bucket_list).permit(:name, :movie_attributes [:name, :genre, :rating])
+    params.require(:bucket_list).permit(:name, :movie_ids => [], :movies_attributes => [:name, :genre, :rating])
   end
 end

@@ -6,3 +6,7 @@
   <%= submit_tag "Add to Bucket List"%>
   <% end %> </p>
 <% end %> -->
+
+<!-- <%= fields_for(:movies) do |movies| %>
+  <%= movies.checkbox :name %>
+<% end %> -->
