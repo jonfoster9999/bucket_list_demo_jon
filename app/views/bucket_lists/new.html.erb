@@ -5,7 +5,10 @@
   <%= f.text_field :name %>
 
   <h4> Select Movies to Add:</h4>
-  <%= f.collection_select :movie_ids, Movie.all, :id, :name, include_blank: "" %><br>
+  <% @movies.each do |m| %>
+    <%= f.label m.name %>
+    <%= check_box_tag "bucket_list[movie_ids][]", m.id %>
+  <% end %>
 
   <h4> Create New Movie to Add:</h4>
   <%= f.fields_for(:movies) do |m| %>
