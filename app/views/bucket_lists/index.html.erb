@@ -1,5 +1,5 @@
 <h1>Your Bucket Lists</h1>
 
 <%= @bucket_lists.each do |f| %>
-  <h3><%= link_to f.name, user_bucket_list_path(f) %></h3>
+  <%= f.name %>
 <% end %>

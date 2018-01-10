@@ -5,6 +5,7 @@ class BucketListsController < ApplicationController
   end
 
   def new
+    @movies = Movie.all
     if current_user
       @bucket_list = BucketList.new
       @bucket_list.movies.build

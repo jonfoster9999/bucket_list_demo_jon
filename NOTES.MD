@@ -10,3 +10,13 @@
 <!-- <%= fields_for(:movies) do |movies| %>
   <%= movies.checkbox :name %>
 <% end %> -->
+
+<!-- <%= fields_for(:movies) do |movies| %>
+  <%= movies.checkbox :name %>
+<% end %> -->
+<!-- <%= f.collection_select :movie_ids, Movie.all, :id, :name, include_blank: "" %><br> -->
+
+<!-- <% @movies.each do |m| %>
+  <%= f.label m.name %>
+  <%= check_box_tag "movie_ids", m.id %>
+<% end %> -->
