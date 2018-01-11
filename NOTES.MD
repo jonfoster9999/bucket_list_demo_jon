@@ -26,3 +26,6 @@
   <h3><%= link_to f.name, user_bucket_list_path(f) %></h3>
 
      redirect_to user_bucket_list_path(current_user, @bucket_list) - show page for indiv bucketlist
+
+     <%= f.label m.bucket_list_movies.seen %>
+     <%= check_box_tag "bucket_list[bucket_list_movies_attributes][seen]", m.id %>
