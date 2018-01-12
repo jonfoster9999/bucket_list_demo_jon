@@ -1,5 +1,6 @@
 class BucketListsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     @bucket_lists = BucketList.all
   end
