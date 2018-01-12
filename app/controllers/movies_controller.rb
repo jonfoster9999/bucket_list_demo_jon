@@ -6,7 +6,8 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find_by(:id => params[:id])
+    @movies = Movie.all
+    @highest_rated = @movies.where("rating > 8.5")
   end
 
   def highest_rating
