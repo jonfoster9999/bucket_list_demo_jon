@@ -5,4 +5,14 @@
   <br />
   <% if @bucket_list.bucket_list_movies.present? %>
     <%= f.fields_for :bucket_list_movies do |b| %>
-      <% movie= m.object.movies %>
+      <% movie= m.object.movie %>
+      <%= movie.name %>
+      Seen?
+      <%= m.check_box :seen %>
+      <br />
+    <% end %>
+  <% else %>
+    No Movies in this Bucket List yet
+  <% end %>
+  <%= f.submit 'Update Bucket List' %>
+<% end %>
