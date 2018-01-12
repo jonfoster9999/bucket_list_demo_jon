@@ -1,1 +1,8 @@
 <h2> Edit Bucketlist </h2>
+
+<%= form_for @bucket_list do |f| %>
+  <%= @bucket_list.inspect %>
+  <br />
+  <% if @bucket_list.bucket_list_movies.present? %>
+    <%= f.fields_for :bucket_list_movies do |b| %>
+      <% movie= m.object.movies %>
