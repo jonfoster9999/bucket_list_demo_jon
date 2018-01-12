@@ -3,6 +3,6 @@
 <%= @bucket_lists.each do |f| %>
   <%= f.name %>
   <%= link_to 'View', user_bucket_list_path(current_user, f.id) %>
-  <%= link_to "Delete", destroy_user_bucket_list_path(current_user, f.id), :confirm => "Are you sure?", :method => :delete %>
+  <%= link_to "Delete", user_bucket_list_path(current_user, f.id), :method => :delete %>
   <br>
 <% end %>
