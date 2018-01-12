@@ -31,3 +31,5 @@
      <%= check_box_tag "bucket_list[bucket_list_movies_attributes][seen]", m.id %>
 
      @bucket_list = BucketList.find(params[:bucket_list_id])
+
+     <%= link_to "Edit", user_bucket_list_path(current_user, :id => @bucket_list.id) %>

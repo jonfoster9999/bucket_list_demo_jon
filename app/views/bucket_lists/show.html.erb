@@ -1,1 +1,9 @@
-<h1><%= @bucket_list.name %>
+<h3><%= @bucket_list.name %></h3>
+
+<%= @bucket_list.movies.each do |f| %>
+  <%= f.name %>
+  <br>
+  <br>
+<% end %>
+<br>
+<%= link_to "Edit", edit_user_bucket_list_path(current_user, :id => @bucket_list.id) %>
