@@ -2,5 +2,5 @@
 
 <%= @bucket_lists.each do |f| %>
   <%= f.name %>
-  <%= link_to "View", user_bucket_list_path(current_user, @bucket_list) %>
+  <%= link_to "Edit", user_bucket_list_path(current_user, :id => @bucket_list.id) %>
 <% end %>

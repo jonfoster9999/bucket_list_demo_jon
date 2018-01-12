@@ -2,6 +2,7 @@ class BucketListsController < ApplicationController
 
   def index
     @bucket_lists = BucketList.all
+    @bucket_list = BucketList.find_by(:id => params[:id])
   end
 
   def new
@@ -31,6 +32,10 @@ class BucketListsController < ApplicationController
    def update
      @bucket_list = Bucketlist.find(params[:id])
      @bucket_list.update(bucket_list_params)
+   end
+
+   def show
+     @bucket_list = BucketList.find_by(:id => params[:id])
    end
 
 private
