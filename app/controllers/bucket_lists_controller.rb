@@ -1,6 +1,6 @@
 class BucketListsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @bucket_lists = BucketList.all
   end
@@ -36,6 +36,12 @@ class BucketListsController < ApplicationController
 
    def show
      @bucket_list = BucketList.find_by(:id => params[:id])
+   end
+
+   def destroy
+     @bucket_list = BucketList.find(params[:id])
+     @bucket_list.destroy
+     redirect_to user_bucket_lists_path(current_user)
    end
 
 private
