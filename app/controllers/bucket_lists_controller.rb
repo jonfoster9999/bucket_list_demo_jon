@@ -31,7 +31,11 @@ class BucketListsController < ApplicationController
 
    def update
      @bucket_list = Bucketlist.find(params[:id])
-     @bucket_list.update(bucket_list_params)
+     if @bucket_list.update_attributes(bucket_list_params)
+       redirect_to user_bucket_list_path(current_user, :id => @bucket_list.id)
+     else
+       redirect_to edit_user_bucket_list_path(current_user, :id => @bucket_list.id)
+     end
    end
 
    def show
