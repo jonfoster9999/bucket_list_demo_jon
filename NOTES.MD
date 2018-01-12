@@ -29,3 +29,5 @@
 
      <%= f.label m.bucket_list_movies.seen %>
      <%= check_box_tag "bucket_list[bucket_list_movies_attributes][seen]", m.id %>
+
+     @bucket_list = BucketList.find(params[:bucket_list_id])
