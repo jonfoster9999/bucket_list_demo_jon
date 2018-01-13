@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: %i[facebook]
   has_many :bucket_lists
+  validates :email, uniqueness: true
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
