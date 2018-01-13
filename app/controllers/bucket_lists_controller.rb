@@ -2,7 +2,7 @@ class BucketListsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @bucket_lists = BucketList.all
+    @bucket_lists = current_user.bucket_lists.all
   end
 
   def new
