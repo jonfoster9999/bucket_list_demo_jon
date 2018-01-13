@@ -10,6 +10,6 @@ class BucketList < ApplicationRecord
   end
 
   def bucket_list_movies_attributes=(bucket_list_movies_attributes)
-    self.bucket_list_movies.build(bucket_list_movies_attributes)
+    self.bucket_list_movies.build(bucket_list_movies_attributes["0"])
   end
 end
