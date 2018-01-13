@@ -10,9 +10,9 @@
     <%= f.fields_for :bucket_list_movies do |b| %>
       <% movie= b.object.movie %>
       <%= movie.name %>
-      Seen?
+      | Seen?
       <%= b.check_box :seen %>
-      <br />
+      <br/>
     <% end %>
   <% else %>
     No Movies in this Bucket List yet
