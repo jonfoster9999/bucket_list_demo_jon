@@ -33,3 +33,13 @@
      @bucket_list = BucketList.find(params[:bucket_list_id])
 
      <%= link_to "Edit", user_bucket_list_path(current_user, :id => @bucket_list.id) %>
+
+            <%= check_box_tag "bucket_list[movie_ids][]", m.id %>
+
+            <h4> Select Movies to Add:</h4>
+            <% @movies.each do |m| %>
+               <% if m.name %>
+                 <%= f.label m.name %>
+                 <%= check_box_tag "bucket_list[movie_ids][]", m.id %>
+               <% end %>
+            <% end %>

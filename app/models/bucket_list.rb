@@ -4,7 +4,7 @@ class BucketList < ApplicationRecord
   has_many :movies, through: :bucket_list_movies
 
   def movies_attributes=(movies_attributes)
-    self.movies.build(movies_attributes[0])
+    self.movies.build(movies_attributes["0"])
   end
 
   def bucket_list_movies_attributes=(bucket_list_movies_attributes)
