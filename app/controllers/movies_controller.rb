@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
 
   def highest_rating
     @movies = Movie.all
-    self.all.select{|movie| movie.rating > 6}
+    @highest_rated = @movies.where("rating > 8.5")
   end
 
 end
