@@ -39,6 +39,10 @@ class BucketListsController < ApplicationController
      @bucket_list = BucketList.find_by(:id => params[:id])
    end
 
+   def edit
+     @bucket_list = BucketList.find_by(:id => params[:id])
+   end
+
    def destroy
      @bucket_list = BucketList.find(params[:id])
      @bucket_list.destroy
