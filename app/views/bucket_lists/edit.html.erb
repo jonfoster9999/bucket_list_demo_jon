@@ -12,6 +12,7 @@
       <%= movie.name %>
       | Seen?
       <%= b.check_box :seen %>
+      <%= b.hidden_field :movie_id %>
       <br/>
     <% end %>
   <% else %>
