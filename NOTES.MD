@@ -71,4 +71,19 @@
             redirect_to new_bucket_list_movie_path(movie_id: movie.id)
           end
         end
- @bucket_list.movies.build(@bucket_list_movie) 
+ @bucket_list.movies.build(@bucket_list_movie)
+
+ def create
+   @bucket_list_movie= BucketListMovie.create(bucket_list_id: params[:bucket_list_id], movie_id: params[:movie_id], seen: params[:seen])
+   @bucket_list = BucketList.find_by(:id => params[:id])
+   @bucket_list = BucketList.find_by(:id => params[:id])
+   if @bucket_list_movie.save
+     if params[:id]
+       @bucket_list.movies << @bucket_list_movie
+       redirect_to user_bucket_lists_path(current_user.id)
+     end
+   else
+     flash[:alert] = "Please make sure all fields are filled out correctly"
+     redirect_to new_bucket_list_movie_path(movie_id: params[:movie_id])
+   end
+ end

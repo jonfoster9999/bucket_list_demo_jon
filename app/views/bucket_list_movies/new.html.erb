@@ -6,8 +6,8 @@
   <h4> Have you seen this movie? </h4>
   <%= f.check_box :seen? %><br>
 
-  <%= f.hidden_field :bucket_list_id, value: @bucket_list_movie.bucket_list_id %>
-  <%= f.hidden_field :movie_id, value: @bucket_list_movie.movie_id %>
+  <%= f.hidden_field :bucket_list_id, value: @bucket_list.id %>
+  <%= f.hidden_field :movie_id, value: @movie.id %>
 
   <%= f.submit "Add Movie to Bucket List" %>
 <% end %>
