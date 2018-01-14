@@ -71,3 +71,4 @@
             redirect_to new_bucket_list_movie_path(movie_id: movie.id)
           end
         end
+ @bucket_list.movies.build(@bucket_list_movie) 
