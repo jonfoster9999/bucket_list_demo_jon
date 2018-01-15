@@ -10,6 +10,8 @@ class BucketList < ApplicationRecord
   end
 
   def bucket_list_movies_attributes=(bucket_list_movies_attributes)
-    self.bucket_list_movies.update(bucket_list_movies_attributes["0"])
+    bucket_list_movies_attributes.each do |index, attribute|
+        BucketListMovie.update(attribute["id"], :seen => attribute["seen"])
+    end
   end
 end
