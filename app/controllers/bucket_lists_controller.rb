@@ -41,6 +41,7 @@ class BucketListsController < ApplicationController
    end
 
    def edit
+     @movies = Movie.all
      @bucket_list = BucketList.find_by(:id => params[:id])
    end
 
