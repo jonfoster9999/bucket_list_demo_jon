@@ -51,6 +51,17 @@ class BucketListsController < ApplicationController
      redirect_to user_bucket_lists_path(current_user)
    end
 
+   def delete_movie
+     @bucket_list = BucketList.find(params[:id])
+     @bucket_list.movies.delete(Movie.find(params[:id]))
+     if @movie.save
+       redirect_to edit_user_bucket_list_path(current_user,:id => @bucket_list.id)
+     else
+       flash[alert:] = "Can't delete movie from Bucket List"
+       redirect_to edit_user_bucket_list_path(current_user. :id => @bucket_list.id)
+     end
+   end
+
 private
 
   def bucket_list_params
