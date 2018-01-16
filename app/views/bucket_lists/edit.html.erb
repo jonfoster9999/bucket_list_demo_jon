@@ -6,6 +6,7 @@
 
   <h4> Select Movies to Add:</h4>
   <%= f.collection_check_boxes :movie_ids, @movies, :id, :name %>
+  <br>
 
   <% @bucket_list.inspect %>
   <br />
