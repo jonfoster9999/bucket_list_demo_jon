@@ -87,3 +87,13 @@
      redirect_to new_bucket_list_movie_path(movie_id: params[:movie_id])
    end
  end
+
+ def destroy
+   @bucketlistmovie = BucketListMovie.find(bucket_list_id: params[:bucket_list_id], movie_id: params[:movie_id])
+   @bucketlistmovie.destroy
+   redirect_to user_bucket_lists_path(current_user)
+ end
+
+ <% @bucket_list.movies.each do |f| %>
+   <%= f.name %>
+   <%= link_to "Delete", bucket_list_movie_path(current_user, f.id), :method => :delete %>
