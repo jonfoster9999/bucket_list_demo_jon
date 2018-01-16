@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   resources :bucket_list_movies
 
   get '/movies/highest_rating' => 'movies#highest_rating', as: :highest_rating
-
+  post '/users/:user_id/bucket_lists/:id/movies/:id/delete', to: 'bucket_lists#delete_movie'
 
 end
