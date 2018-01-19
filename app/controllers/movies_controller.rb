@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
   end
 
   def create
-     @movie = movie.build(movie_params)
+     @movie = Movie.create(movie_params)
      if @movie.save
        redirect_to movies_path
      else
