@@ -34,4 +34,9 @@ class MoviesController < ApplicationController
     @highest_rated = @movies.where("rating > 8.5")
   end
 
+  private
+
+  def movie_params
+    params.require(:movie).permit(:name, :genre, :rating)
+  end
 end
