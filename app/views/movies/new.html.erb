@@ -1,0 +1,13 @@
+<h2>New Bucket Movie Form</h2>
+
+<%= form_for([current_user, @movie]) do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= m.label :genre %>
+  <%= m.text_field :genre %><br>
+  <%= m.label :rating %>
+  <%= m.number_field :rating %><br>
+<% end %>
+
+  <%= f.submit "Create New Movie" %>
+  <% end %>
